@@ -130,7 +130,7 @@
 				</div>
 			</article>
 			<!-- Exploration -->
-			<article id="exploration" class="wrapper style3">
+			<article id="exploration" class="wrapper style1">
 				<div class="container">
 					<header>
 						<div class="col-12 col-6-medium col-12-small">
@@ -150,12 +150,39 @@
 							<h2 style="margin-bottom: 4px">We used Computational Modelling to analyze our data</h2>	
 							<strong>Data Modelling</strong>
 						</div>
-					</header>	
-				</div>
+					</header>
+					<p class="explain">Given that the data we want to analyze is a time series, we used Event Detection Models to derive meaningful insights from such data. In particular, our team used Peak Finding and Change Point Detection as our Machine Learning models. Peak Finding was applied to identify the dates with the highest concentration of negative tweets, while Change Point Detection helped us pinpoint the dates when significant shifts occurred in the number of negative tweets. </p>
+					<p class="explain">For Peak Finding, our team only modified one of its parameters, the height parameter. It was set to a value of 4 which denotes that there must be at least 4 tweets on a given date for it to be considered a peak. From this, the Peak Finding Model detected three peaks occuring on the dates of April 20, 2021, April 23, 2021, and April 26, 2021 with 8, 12, and 15 fake news tweets respectively.</p>
+					<a href="#" class="image featured"><img src="images/PeakDetection.PNG" alt="" /></a>
+					<p class="explain">As for Change Point Detection, our team used the Pelt algorithm with the penalty value set to one. We believe that this penalty value accurately reflects the trends present in our data through mere visual inspection. The Change Point Detection Model detected seven change points occuring on the dates of April 21, 2021, May 1, 2021, May 21, 2021, July 30, 2021, August 4, 2021, May 16, 2022, and finally, May 26, 2022. We've noticed that these change points can be grouped together into 3 major periods occuring on April to May 2021, July to August 2021, and on May 2022.</p>
+					<a href="#" class="image featured"><img src="images/ChangePoint.PNG" alt="" /></a>
+					<p class="explain">From the results of these models and the patterns observed from the tweets themselves, we isolated and identified the following events to be probable causes of the peaks and change points in our data:</p>
+					<p class="explain"><strong>April to May 2021 Change Points:</strong></p>
+						<ul class="container" style="text-align: left">
+							<li><strong>April 14, 2021:</strong> Patricia Non establishes the Maginhawa Community Pantry. </li>
+							<li><strong>April 19 and April 20, 2021:</strong> NTF-ELCAC releases statements red-tagging community pantries.</li>
+							<li><strong>April 20, 2021:</strong> Non temporarily halts the operation of the Maginhawa Community Pantry due to the red-tagging.</li>
+							<li><strong>April 23, 2021:</strong> Angel Locsin sets up a community pantry at Barangay Holy Spirit. Tragically, a senior citizen queueing for the pantry collapses and passes away.</li>
+							<li><strong>April 23, 2021:</strong> SMNI releases a video on their Facebook page where Jeffrey "Ka Eric" Celiz claims that Patricia Non is a member of the NPA</li>
+						</ul>
+					<br>
+					<p class="explain">July to August 2021 Change Points:</p>
+						<ul class="container" style="text-align: left">
+							<li><strong>July 31, 2021:</strong> Non urges the government and corporations to step up to help those in need as Metro Manila enters another Enhanced Community Quarantine (ECQ) lockdown.  </li>
+						</ul>
+					<br>
+					<p class="explain">May 2022 Change Points:</p>
+					<ul class="container" style="text-align: left">
+						<li><strong>May 18, 2022:</strong> The US embassy awards Non for pioneering the community pantry movement</li>
+						<li><strong>May 23, 2022:</strong>  Non expressed dismay over Cavite Rep. Jesus Crispin Remulla nomination as DOJ Secretary. Previously, Remulla alleged that community pantries harbored hidden political agendas and that it was being used to criticize the government for its COVID-19 response.</li>
+					</ul>
+					<br>
+					<p class="explain">We've noticed that, prior to April 20, 2021, there is a significant lack of negative mis/disinformation tweets concerning community pantries. However, starting from April 20, 2021, there was a sudden surge in such tweets, predominantly observed during the month of April 2021. Subsequently, the frequency of these tweets sharply declined in the following months, with only two identified periods of significant change based on the change points detected after May 2021.</p>
+					<p class="explain"> Thus, our team has decided that we have <strong>insufficient evidence to conclude</strong> that the NTF-ELCAC red-tagging statements caused a spike in hate and mis/disinformation tweets towards community pantries. We believe that this is due to the lack of data prior to April 20, 2021. On top of this, the relevant and significant events in April 2021 are in close proximity to each other, making it difficult to determine the actual impact and influence that the NTF-ELCAC statement has on the peaks that follow. We recommend that future studies should focus on gathering more data from other social media platforms such as Facebook and Instagram to see the trend before the NTF-ELCAC statement.</p>	
 			</article>
 
 			<!-- Results -->
-			<article id="results" class="wrapper style3">
+			<article id="results" class="wrapper style1">
 				<div class="container">
 					<header>
 						<div class="col-12 col-6-medium col-12-small">
@@ -165,15 +192,15 @@
 					</header>
 					<div class="row">
 						<h3>Introduction</h3>
-						<p>Community pantries were heavily affected by red-tagging in 2021. Some were harassed by the police and had to close down temporarily. We wanted to see if government red-tagging of community pantries caused people to think negatively about the pantries.</p>
+						<p class="explain">In 2021, Community pantries were heavily affected by red-tagging from both citizens and government entities. Some were harassed by the police and had to close down temporarily. Our objective was to examine whether the government's,specifically the NTF-ELCAC's, red-tagging of community pantries influenced negative perceptions among the public towards these initiatives.</p>
 						<h3>Materials and Methods</h3>
-						<p>We collected various tweets that were against community pantries and contained dis/misinformation. Our main data are the dates when these tweets were posted. We used snscrape to get most of the tweets and collected the rest manually using Twitter's advanced search function. We then performed peak detection and change point detection to test our hypothesis. </p>
+						<p class="explain">We collected various tweets that were against community pantries and contained disinformation and misinformation. Our primary focus was on recording and analyzing the dates when these tweets were posted in order to compare them to NTF-ELCAC's statements on April 19 and April 20, 2021. We used snscrape to retrieve most of the tweets and collected the rest manually using Twitter's advanced search function. We then performed peak detection and change point detection to test our hypothesis. </p>
 						<h3>Results and Discussion</h3>
-						<p>Due to not finding any tweets earlier than April 20, 2021, whether the NTF-ELCAC statement caused a spike in hate and mis/disinformation tweets towards community pantries can not be concluded. The authors recommend getting a bigger dataset with posts from other social media as well to see the trend before the NTF-ELCAC statement.</p>
+						<p class="explain">Given the absence of tweets prior to April 20, 2021, it is inconclusive whether the NTF-ELCAC statement resulted in an increase in hate and mis/disinformation tweets directed at community pantries. In order to ascertain the trend preceding the NTF-ELCAC statement, for future studies conducted on this topic,we suggest acquiring a larger dataset that includes posts from other social media platforms as well. </p>
 						<h3>Implications</h3>
-						<p>Finding a link between red-tagging by organizations or well-known people and troll or dis/misinformation posts would mean that regulations should be set regarding red-tagging. Red-tagging with no evidence should be punishable due to the possible harm it can cause like what the community pantries experienced.</p>
+						<p class="explain">Establishing a correlation between red-tagging by organizations or prominent individuals and the presence of troll, disinformation, and misinformation posts highlights the need for regulations concerning red-tagging. Unwarranted and wanton red-tagging should should be subject to penalities due to the possible harm it can inflict, as exemplified by what the organizers of the community pantries experienced.</p>
 						<h3>Conclusion </h3>
-						<p>Though the effect of the NTF-ELCAC statement on negative Twitter posts is uncertain. The authors think this is important to continue to find out if red-tagging increases hate and disinformation towards certain things so what happened to the community pantries in 2021 won't happen to other humanitarian movements and programs.</p>
+						<p class="explain">Our team has concluded that we can neither reject nor accept the null hypothesis due to insufficient data and evidence. Though the effect of the NTF-ELCAC statement on negative Twitter posts is uncertain, we would like to emphasize the importance of these types of studies in order to determine and highlight the damages that red-tagging can do to both organizations and individuals alike. By doing so, we can put measures in place to prevent these kinds of detrimental events from reoccuring, safeguarding our community's humanitarian movements and programs.</p>
 					</div>
 					<footer>
 						<p>Want to learn more? Take a look at our source codes.</p>
