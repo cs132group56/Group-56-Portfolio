@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>PH Twitter Fake News Analysis</title>
+		<title>Community Pantry Red-tagging</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,10 +18,11 @@
 				<ul class="container">
 					<li><a href="#top">Top</a></li>
 					<li><a href="#overview">Overview</a></li>
-					<li><a href="#data">Data</a></li>
-					<li><a href="#methods">Methods</a></li>
+					<li><a href="#collection">Collection</a></li>
+					<li><a href="#exploration">Exploration</a></li>
+					<li><a href="#modelling">Modelling</a></li>
 					<li><a href="#results">Results</a></li>
-					<li><a href="#team">Team</a></li>
+					<li><a href="#team">Our Team</a></li>
 				</ul>
 			</nav>
 
@@ -30,18 +31,17 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/pic00.jpg" alt="" /></span>
+							<span class="image fit"><img src="images/logo.png" alt="" /></span>
 						</div>
 						<div class="col-8 col-7-large col-12-medium">
 							<header>
-								<h1>Hi. We are <strong>Group 56</strong>.</h1>
+								<h1>Hi. We are <strong">Project</strong> <strong style="color: rgb(28, 208, 124)">JADE</strong>.</h1>
 							</header>
-							<p>And this is our project, <strong>Analysis of Negative Tweets rooted on the NTF-ELCAC's Red-tagging of Community Pantries during Covid-19 Pandemic</strong>, which aims to ascertain whether the red-tagging statements from certain personalities caused a rise in fake news centered around community pantries. </p>
+							<p style="font-size:1.2em">And this is our data science project, <strong>Time Series Analysis of NTF-ELCAC's Red-tagging of Community Pantries during the COVID-19 Pandemic</strong>. Our project aims to determine whether the red-tagging statements by NTF-ELCAC triggered a series of events resulting in the proliferation of fake news centered around community pantries. </p>
 							<p>Data Science Team</p>
-							<ul style="list-style-type:none; margin-top:-30px;">
+							<ul style="list-style-type:none; margin-top:-50px;">
 							  <li>Encinares, Christian Dale | WFW</li>
 							  <li>Jafri, Ali Mahmood | WFU</li>
-							  <li>Mariano, James | WFW</li>
 							</ul>
 						</div>
 					</div>
@@ -52,106 +52,105 @@
 			<article id="overview" class="wrapper style2">
 				<div class="container">
 					<header>
-						<h2>Here's an overview of our project.</h2>
-						<p><strong>Research Question: What effect did the NTF-ELCAC red-tagging statement do to negatively impact the perception of community pantries?</strong></p>
+						<div class = "row aln-center">
+							<div class="col-12 col-6-medium col-12-small">
+								<h2 style="margin-bottom: 4px">Here's an overview of our data science project.</h2>	
+								<strong>Problem Formulation</strong>
+							</div>
+							<p class = "explain">On April 14, 2021, Ana Patricia Non started a community pantry on Maginhawa Street. This act inspired other Filipinos who in turn started their own community pantries. On April 19 and April 20 however, the NTF-ELCAC and other government entities such as the Quezon City police department would red-tag these community pantries, accusing them as communists using the pantries as a way to recruit members and collect funds. Because of these events, we wanted to know how much these statements negatively influenced the perception of community pantries.</p>
+				
+						</div>
+							<div class="col-4 col-6-medium col-12-small">
+								<section class="box style1">
+									<span class="customicons fas fa-question"></span>
+									<h3><strong></strong>Research Question</strong></h3>
+									<p>Did the NTF-ELCAC red-tagging statement negatively impact the perception of community pantries?</p>
+								</section>
+							</div>
 					</header>
 					<div class="row aln-center">
 						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured fa-comments"></span>
+							<section class="box style1" style="height: 100%">
+								<span class="customicons far fa-lightbulb"></span>
 								<h3>Hypothesis</h3>
-								<p>The NTF-ELCAC statement heightened the occurrence of negative tweets towards community pantries.</p>
+								<p>The NTF-ELCAC statements heightened the occurrence of negative mis/disinformation tweets towards community pantries.</p>
 							</section>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon solid featured fa-camera-retro"></span>
+							<section class="box style1" style="height: 100%">
+								<span class="customicons fas fa-not-equal"></span>
 								<h3>Null Hypothesis</h3>
-								<p>The NTF-ELCAC statement did not heighten the occurrence of negative tweets towards community pantries</p>
+								<p>The NTF-ELCAC statements did not heighten the occurrence of negative mis/disinformation tweets towards community pantries.</p>
 							</section>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured fa-thumbs-up"></span>
+							<section class="box style1" style="height: 100%">
+								<span class="icon featured fa-clipboard"></span>
 								<h3>Action Plan</h3>
-								<p>Analyze the dates where the negative tweets about the community pantries occurred the most.</p>
+								<p>Analyze the dates where the negative mis/disinformation tweets about the community pantries occurred the most.</p>
 							</section>
 						</div>
 					</div>
-					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-						<a href="#portfolio" class="button large scrolly">Let's take a look at our data</a>
-					</footer>
 				</div>
 			</article>
 
-		<!-- Data -->
-			<article id="data" class="wrapper style3">
+		<!-- Collection -->
+			<article id="collection" class="wrapper style3">
 				<div class="container">
 					<header>
-						<h2>We mined the internet for fake news data.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
+						<div class="col-12 col-6-medium col-12-small">
+							<h2 style="margin-bottom: 4px">We looked for tweets containing fake news about community pantries.</h2>	
+							<strong>Data Collection</strong>
+						</div>
+						<p class = "explain" style = "margin-top: 10px">Throughout our data collection phase, our team successfully gathered a total of 152 tweets that contained misinformation and disinformation about community pantries. We were able to gather tweets from a period spanning from the inception of the community pantry movement in 2021 up until 2022. It's worth noting that tweet didn't have to contain red-tagging in its content. It is included in our dataset as long as it involved the dissemination of fake news, with the aim of painting community pantries in a negative light.  </p>
 					</header>
 					<div class="row">
 						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style2" style="height: 100%">
 								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Topic</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<h3><a href="#">Collection</a></h3>
+								<p>Our team used a combination of automatic and manual methods to retrieve posts from Twitter. For automatic collection, we utilized the snscrape python library while for manual collection, we used Twitter's advanced search feature. Our intial scope of tweets was from 2016 to 2022 but since the COVID-19 community pantries only started around 2021, our range was narrowed down to 2021 to 2022.</p>
 							</article>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style2" style="height: 100%">
 								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
 								<h3><a href="#">Keywords</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<p>We used a number of keywords that we think would appear in tweets concerning the community pantry. These keywords generally involve the community pantries and its organizers, the CPP-NPA-NDF, and the NTF-ELCAC. </p>
+								<p>Some of the keywords we used are: NTF-ELCAC, NPA-CPP-NDF, Community Pantry, Patricia Non, Angel Locsin, Communist, and Propaganda</p>
 							</article>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style2" style="height: 100%">
 								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<h3><a href="#">Tools</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<h3><a href="#">Review</a></h3>
+								<p>Some of our peers reviewed the data we collected and identified some errors in our data's formatting and values. These were taken into account and corrected before proceeding with our data exploration.</p>
 							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Tempus dolore</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-								<h3><a href="#">Feugiat aliquam</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<h3><a href="#">Sed amet ornare</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
 					</div>
-					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-					</footer>
 				</div>
 			</article>
-
-			<!-- Methods -->
-			<article id="methods" class="wrapper style3">
+			<!-- Exploration -->
+			<article id="exploration" class="wrapper style3">
 				<div class="container">
 					<header>
-						<h2>Data Exploration</h2>
-						<p>Embedded below is a python notebook which details our data preprocessing and exploration methodology.</p>
+						<div class="col-12 col-6-medium col-12-small">
+							<h2 style="margin-bottom: 4px">We filtered out irrelevant features and visualized our data.</h2>	
+							<strong>Data Exploration</strong>
+						</div>
+						<p class = "explain" style = "margin-top: 10px">Embedded below is a python notebook which details our data preprocessing and exploration methodology.</p>
 					</header>
-					<div class>
-						<script src="https://gist.github.com/christianencinares/3da668dc6e1723f0ce4bdb687588f530.js"></script>
-					</div>
+					<script src="https://gist.github.com/christianencinares/3da668dc6e1723f0ce4bdb687588f530.js"></script>
+				</div>
+			</article>
+			<!-- Modelling -->
+			<article id="modelling" class="wrapper style3">
+				<div class="container">
+					<header>
+						<div class="col-12 col-6-medium col-12-small">
+							<h2 style="margin-bottom: 4px">We used Computational Modelling to analyze our data</h2>	
+							<strong>Data Modelling</strong>
+						</div>
+					</header>	
 				</div>
 			</article>
 
@@ -159,93 +158,75 @@
 			<article id="results" class="wrapper style3">
 				<div class="container">
 					<header>
-						<h2>Here's what we found out.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
+						<div class="col-12 col-6-medium col-12-small">
+							<h2 style="margin-bottom: 4px">Here's what we found out.</h2>	
+							<strong>Data Communication</strong>
+						</div>
 					</header>
 					<div class="row">
-						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<h3><a href="#">Results</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Results</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
+						<h3>Introduction</h3>
+						<p>Community pantries were heavily affected by red-tagging in 2021. Some were harassed by the police and had to close down temporarily. We wanted to see if government red-tagging of community pantries caused people to think negatively about the pantries.</p>
+						<h3>Materials and Methods</h3>
+						<p>We collected various tweets that were against community pantries and contained dis/misinformation. Our main data are the dates when these tweets were posted. We used snscrape to get most of the tweets and collected the rest manually using Twitter's advanced search function. We then performed peak detection and change point detection to test our hypothesis. </p>
+						<h3>Results and Discussion</h3>
+						<p>Due to not finding any tweets earlier than April 20, 2021, whether the NTF-ELCAC statement caused a spike in hate and mis/disinformation tweets towards community pantries can not be concluded. The authors recommend getting a bigger dataset with posts from other social media as well to see the trend before the NTF-ELCAC statement.</p>
+						<h3>Implications</h3>
+						<p>Finding a link between red-tagging by organizations or well-known people and troll or dis/misinformation posts would mean that regulations should be set regarding red-tagging. Red-tagging with no evidence should be punishable due to the possible harm it can cause like what the community pantries experienced.</p>
+						<h3>Conclusion </h3>
+						<p>Though the effect of the NTF-ELCAC statement on negative Twitter posts is uncertain. The authors think this is important to continue to find out if red-tagging increases hate and disinformation towards certain things so what happened to the community pantries in 2021 won't happen to other humanitarian movements and programs.</p>
 					</div>
 					<footer>
 						<p>Want to learn more? Take a look at our source codes.</p>
-						<a href="#contact" class="button large scrolly">Github Repo</a>
+						<a href="https://github.com/cs132group56/Group-56-Portfolio" class="button large scrolly">Github Repo</a>
 					</footer>
+				</div>	
+			</article>
+
+			<!-- Poster -->
+			<article id="poster" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h2>Check out our poster!</h2>
+					</header>
+					<div class="row">
+						<a href="#" class="image"><img src="images/Poster.png" alt="" /></a>
+					</div>
 				</div>
 			</article>
 
-		<!-- Team -->
+			<!-- The Team -->
 			<article id="team" class="wrapper style4">
 				<div class="container medium">
 					<header>
-						<h2>We'd like to hear from you.</h2>
-						<p>You can add more information about the team members here.</p>
+						<h2>Meet the Team</h2>
 					</header>
-					<div class="row">
-						<div class="col-12">
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Subject" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-											<li><input type="reset" value="Clear Form" class="alt" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
+					<div class="box style3">
+						<div class="row">
+						  <div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image photo"><img src="images/Dale.PNG" /></a>
+						  </div>
+						  <div class="col-8 col-6-medium col-12-small">
+							<h3 style="color:black; margin-bottom: 0; text-align: left">Christian Dale Encinares</h3>
+							<p class="email">crencinares@up.edu.ph</p>
+							<p class="bio">Christian Dale Encinares is currently a 4th year BS Computer Science student studying at the University of the Philippines Diliman. He is currently under the Department of Computer Science's Computer Security Group conducting research on the usage of Serious Games as a means to promote cybersecurity literacy and awareness for Filipinos. On his free time, he enjoys playing video games and binging on tv series.</p>
+						  </div>
 						</div>
-						<div class="col-12">
-							<hr />
-							<h3>Find me on ...</h3>
-							<ul class="social">
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<!--
-								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
-								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
-								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
-								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
-								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
-								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
-								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
-								-->
-							</ul>
-							<hr />
+					</div>
+					<div class="box style3">
+						<div class="row">
+						  <div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image photo"><img src="images/Ali.PNG"/></a>
+						  </div>
+						  <div class="col-8 col-6-medium col-12-small">
+							<h3 style="color:black; margin-bottom: 0; text-align: left">Ali Mahmood Jafri</h3>
+							<p class="email">agjafri@up.edu.ph</p>	
+							<p class="bio">Ali Jafri is a 2nd Year BS Computer Science student. His hobbies include: watching YouTube videos, listening to music, and playing games. He is also trying to learn Japanese.</p>
+						  </div>
 						</div>
 					</div>
 					<footer>
 						<ul id="copyright">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; Project JADE. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</footer>
 				</div>

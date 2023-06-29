@@ -199,9 +199,30 @@ input, select, textarea {
 		height: 1px;
 		margin: 3em 0;
 	}
-
-	p, ul, ol, dl, table {
+	p {
 		margin-bottom: 2em;
+		color : rgb(62, 62, 62);
+	}
+		p.bio{
+			color:black; 
+			font-size:0.9em; 
+			text-align: left; 
+			line-height: 1.5em
+		}
+		p.email{
+			color:black; 
+			margin-bottom: 0; 
+			text-align: left
+		}
+		p.explain{
+			color:black; 
+			font-size:1em; 
+			text-align:left;
+		}
+
+	ul, ol, dl, table {
+		margin-bottom: 2em;
+		color : rgb(62, 62, 62);
 	}
 
 	header {
@@ -1657,6 +1678,15 @@ input, select, textarea {
 				margin: 0 auto;
 				width: auto;
 			}
+			
+		.image.photo {
+			max-width: 400px;
+			max-height: 400px;
+			width: auto;
+			height: auto;
+			margin-right: 20px;
+			border-radius: 50%;
+		  }
 
 /* Button */
 
@@ -1686,7 +1716,7 @@ input, select, textarea {
 		text-shadow: -1px -1px 0.5px rgba(0, 0, 0, 0.5);
 		overflow: hidden;
 		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.75);
-		background-color: #43B3E0;
+		background-color: rgb(28, 208, 124);
 		padding: 1em 2.35em 1em 2.35em;
 		font-size: 1.1em;
 		max-width: 24em;
@@ -1697,7 +1727,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #43bff0;
+			background-color: rgb(32, 228, 136);
 			color: #fff !important;
 		}
 
@@ -1706,7 +1736,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background-color: #3BA8D3;
+			background-color: rgb(32, 228, 136);
 			top: 1px;
 		}
 
@@ -1937,6 +1967,12 @@ input, select, textarea {
 			width: auto;
 		}
 
+		.box.style3 {
+			padding: 1em 1em 1em 1em;
+			height: auto;
+			margin-bottom: 2em;
+		}
+
 /* Icons */
 
 	.icon {
@@ -1974,7 +2010,7 @@ input, select, textarea {
 		}
 
 		.icon.featured {
-			color: #EA8A95;
+			color: rgb(24, 141, 86);
 			display: block;
 			margin: 0 0 1.5em 0;
 			cursor: default;
@@ -1983,6 +2019,17 @@ input, select, textarea {
 			.icon.featured:before {
 				font-size: 6em;
 			}
+
+	.customicons {
+		color: rgb(24, 141, 86);
+		display: block;
+		margin: 0 0 1.5em 0;
+		cursor: default;
+	}
+
+		.customicons:before {
+			font-size: 6em;
+		}
 
 /* Wrappers */
 
@@ -2011,7 +2058,6 @@ input, select, textarea {
 		.wrapper.style4 {
 			background-color: #303030;
 			color: #999;
-			text-shadow: -1px -1px 0px #181818;
 		}
 
 			.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
@@ -2036,7 +2082,7 @@ input, select, textarea {
 /* Nav */
 
 	#nav {
-		background-color: #282828;
+		background-color: #086325;
 		text-align: center;
 		position: fixed;
 		left: 0;
@@ -2079,7 +2125,7 @@ input, select, textarea {
 
 			#nav a:hover {
 				color: #fff !important;
-				background: #383838;
+				background: #054018;
 			}
 
 			#nav a.active {
