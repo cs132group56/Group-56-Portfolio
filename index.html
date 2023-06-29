@@ -107,14 +107,14 @@
 					<div class="row">
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2" style="height: 100%">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+								<a href="#" class="image"><img src="images/Collection.PNG" style="min-height: 250px;object-fit:cover" alt="" /></a>
 								<h3><a href="#">Collection</a></h3>
 								<p>Our team used a combination of automatic and manual methods to retrieve posts from Twitter. For automatic collection, we utilized the snscrape python library while for manual collection, we used Twitter's advanced search feature. Our intial scope of tweets was from 2016 to 2022 but since the COVID-19 community pantries only started around 2021, our range was narrowed down to 2021 to 2022.</p>
 							</article>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2" style="height: 100%">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<a href="#" class="image"><img src="images/Keywords.PNG" style="min-height: 250px;object-fit:cover" alt="" /></a>
 								<h3><a href="#">Keywords</a></h3>
 								<p>We used a number of keywords that we think would appear in tweets concerning the community pantry. These keywords generally involve the community pantries and its organizers, the CPP-NPA-NDF, and the NTF-ELCAC. </p>
 								<p>Some of the keywords we used are: NTF-ELCAC, NPA-CPP-NDF, Community Pantry, Patricia Non, Angel Locsin, Communist, and Propaganda</p>
@@ -122,7 +122,7 @@
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2" style="height: 100%">
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<a href="#" class="image"><img src="images/Review.PNG" style="min-height: 250px;object-fit:cover" alt="" /></a>
 								<h3><a href="#">Review</a></h3>
 								<p>Some of our peers reviewed the data we collected and identified some errors in our data's formatting and values. These were taken into account and corrected before proceeding with our data exploration.</p>
 							</article>
@@ -137,9 +137,91 @@
 							<h2 style="margin-bottom: 4px">We filtered out irrelevant features and visualized our data.</h2>	
 							<strong>Data Exploration</strong>
 						</div>
-						<p class = "explain" style = "margin-top: 10px">Embedded below is a python notebook which details our data preprocessing and exploration methodology.</p>
+						<p class = "explain">Our data underwent preprocessing and exploration in order to ensure that the data we will use for our modelling is accurate as possible. We also explored and visualized our data through various visual tools to gain insights on underlying trends and patterns that would otherwise be difficult to see by just looking at raw data.</p>
 					</header>
+					<strong>Preprocessing Steps</strong>
+					<div class="row aln-center">
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1" style="height: 100%">
+								<span class="customicons fas fa-cut"></span>
+								<h3>Feature Trimming</h3>
+								<p>We identified the relevant features in our dataset and removed the ones we deemed irrelevant to this study. We were left with the following: ID, Account type, Account handle, Joined, Tweet, Tweet Type, Date posted, Content type, Likes, Replies, Retweets, Quote Tweets. Our primary focus of analysis is on the Date posted column.</p>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1" style="height: 100%">
+								<span class="customicons fas fa-exclamation-triangle"></span>
+								<h3>Handling Missing Values</h3>
+								<p>We ensured that none of our relevant features contained empty or null values. As a side effect of trimming the columns and manually reviewing values prior to importing the dataset, we found that all of the features already had complete values.  </p>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1" style="height: 100%">
+								<span class="customicons fas fa-chart-area"></span>
+								<h3>Handling outliers</h3>
+								<p>We found that our only numerical values were Likes, Replies, Retweets, and Quote Tweets. Since we are mainly focusing on the Date posted feature, we decided not to perform normalization/standardization/scaling and kept the outliers</p>
+							</section>
+						</div>
+						<div class="row aln-center">
+							<div class="col-4 col-6-medium col-12-small">
+								<section class="box style1" style="height: 100%">
+									<span class="customicons fas fa-text-height"></span>
+									<h3>Ensuring Formatting Consistency</h3>
+									<p>We ensured that features, especially our date and time values, had consistent formatting. We also made minor changes to feature labels for consistent capitalization.</p>
+								</section>
+							</div>
+							<div class="col-4 col-6-medium col-12-small">
+								<section class="box style1" style="height: 100%">
+									<span class="customicons fas fa-table"></span>
+									<h3>Categorical data encoding</h3>
+									<p>To help identify categories for each tweet, we performed one-hot encoding on our categorical features, Account type,Content type, and Tweet type. We used MultiLabelBinarizer for Tweet type and Content type as both of these can contain multiple labels. For Account type, we simply used pandas' get_dummies() function</p>
+								</section>
+							</div>
+							<div class="col-4 col-6-medium col-12-small">
+								<section class="box style1" style="height: 100%">
+									<span class="customicons fab fa-bitbucket"></span>
+									<h3>Binning</h3>
+									<p>In preparation for our time series analysis, we binned our time series data, the Date posted feature in particular, by day and by month.</p>
+								</section>
+							</div>
+						</div>
+					</div>
+					<p class = "explain" style = "margin-top: 10px">Embedded below is a python notebook which contains our data preprocessing and exploration methodology.</p>
 					<script src="https://gist.github.com/christianencinares/3da668dc6e1723f0ce4bdb687588f530.js"></script>
+
+					<strong>Visualizations</strong>
+					<div class="row aln-center">
+						<article class="box style1 col">
+							<a href="#" class="image"><img src="images/Histograms.PNG" alt="" /></a>
+							<h3>Histograms: Engagement Distribution</h3>
+							<p>Almost all of the tweets received little to no engagement.</p>
+						</article>
+						<article class="box style1 col">
+							<a href="#" class="image"><img src="images/Bar1.PNG" style="min-height: 250px; object-fit: cover" alt="" /></a>
+							<h3>Bar Graph: Distribution of Account Types</h3>
+							<p>Majority of the users who posted fake news were anonymous followed by known identities. Our dataset did not contain fake news from media accounts.</p>
+						</article>
+						<article class="box style1 col">
+							<a href="#" class="image"><img src="images/Bar2.PNG" style="min-height: 250px; object-fit: cover" alt="" /></a>
+							<h3>Bar Graph: Distribution of Content Types</h3>
+							<p>Majority of the fake news tweets appeal to emotion. </p>
+						</article>
+						<article class="box style1 col">
+							<a href="#" class="image"><img src="images/Bar3.PNG" style="min-height: 250px; object-fit: cover" alt="" /></a>
+							<h3>Bar Graph: Distribution of Tweet Types</h3>
+							<p>Majority of the fake news tweets were text-based followed by replies.</p>
+						</article>
+						<article class="box style1 col">
+							<a href="#" class="image"><img src="images/Bar4.PNG" style="min-height: 250px; object-fit: cover" alt="" /></a>
+							<h3>Bar Graph: User Join Date</h3>
+							<p>Majority of the users who posted fake news had newly created accounts from 2020 and 2021.</p>
+						</article>
+						<article class="box style1 col">
+							<a href="#" class="image"><img src="images/Scatter.PNG" style="min-height: 250px; object-fit: cover" alt="" /></a>
+							<h3>Scatter Plot: Correlation between Join Date and Post Date</h3>
+							<p>There is a notable concentration of users who joined between the years 2020 to 2021 and posted a mis/disinformation tweet during the months of April and May 2021</p>
+						</article>
+					</div>
 				</div>
 			</article>
 			<!-- Modelling -->
@@ -147,7 +229,7 @@
 				<div class="container">
 					<header>
 						<div class="col-12 col-6-medium col-12-small">
-							<h2 style="margin-bottom: 4px">We used Computational Modelling to analyze our data</h2>	
+							<h2 style="margin-bottom: 4px">We peformed time series analysis on our data.</h2>	
 							<strong>Data Modelling</strong>
 						</div>
 					</header>
@@ -198,7 +280,7 @@
 						<h3>Results and Discussion</h3>
 						<p class="explain">Given the absence of tweets prior to April 20, 2021, it is inconclusive whether the NTF-ELCAC statement resulted in an increase in hate and mis/disinformation tweets directed at community pantries. In order to ascertain the trend preceding the NTF-ELCAC statement, for future studies conducted on this topic,we suggest acquiring a larger dataset that includes posts from other social media platforms as well. </p>
 						<h3>Implications</h3>
-						<p class="explain">Establishing a correlation between red-tagging by organizations or prominent individuals and the presence of troll, disinformation, and misinformation posts highlights the need for regulations concerning red-tagging. Unwarranted and wanton red-tagging should should be subject to penalities due to the possible harm it can inflict, as exemplified by what the organizers of the community pantries experienced.</p>
+						<p class="explain">Establishing a correlation between red-tagging by organizations or prominent individuals and the presence of troll, disinformation, and misinformation posts highlights the need for regulations concerning red-tagging. Unwarranted and wanton red-tagging should be subject to penalities due to the possible harm it can inflict, as exemplified by what the organizers of the community pantries experienced.</p>
 						<h3>Conclusion </h3>
 						<p class="explain">Our team has concluded that we can neither reject nor accept the null hypothesis due to insufficient data and evidence. Though the effect of the NTF-ELCAC statement on negative Twitter posts is uncertain, we would like to emphasize the importance of these types of studies in order to determine and highlight the damages that red-tagging can do to both organizations and individuals alike. By doing so, we can put measures in place to prevent these kinds of detrimental events from reoccuring, safeguarding our community's humanitarian movements and programs.</p>
 					</div>
